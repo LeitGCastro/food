@@ -11,7 +11,7 @@ import com.example.food.entities.Food;
 import com.example.food.repositories.FoodRepository;
 
 @RestController
-@RequestMapping(value="/food")
+@RequestMapping(value = "/food")
 public class FoodController {
     
     // Injeção de dependencias para instanciar o FoodRepository

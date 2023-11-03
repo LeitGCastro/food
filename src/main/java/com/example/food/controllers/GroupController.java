@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.food.entities.Recipe;
-import com.example.food.repositories.RecipeRepository;
+import com.example.food.entities.Group;
+import com.example.food.repositories.GroupRepository;
 
 @RestController
-@RequestMapping(value = "/")
-public class RecipeController {
+@RequestMapping(value = "/group")
+public class GroupController {
     
     @Autowired
-    private RecipeRepository repository;
+    private GroupRepository repository;
 
-    @GetMapping
-    public List<Recipe> findAll(){
-        List<Recipe> result = repository.findAll();
+    @GetMapping 
+    public List<Group> findAll(){
+        List<Group> result = repository.findAll();
         return result;
     }
 }

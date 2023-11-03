@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class Group {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; 
+    private int id;
     private String description;
 
     public int getId() {
@@ -26,5 +26,6 @@ public class Group {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
 }

@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.food.entities.Recipe;
-import com.example.food.repositories.RecipeRepository;
+import com.example.food.entities.Nutrient;
+import com.example.food.repositories.NutrientRepository;
 
 @RestController
-@RequestMapping(value = "/")
-public class RecipeController {
+@RequestMapping(value = "/nutrient")
+public class NutrientController {
     
     @Autowired
-    private RecipeRepository repository;
+    private NutrientRepository repository;
 
     @GetMapping
-    public List<Recipe> findAll(){
-        List<Recipe> result = repository.findAll();
-        return result;
+    public List<Nutrient> findAll(){
+        List<Nutrient> result = repository.findAll();
+        return result;        
     }
 }
