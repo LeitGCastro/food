@@ -17,15 +17,15 @@ public class Recipe {
 
     @ManyToOne
     @JoinColumn(name = "id_food")
-    private Food id_food;
+    private Food foodId;
 
     @ManyToOne
     @JoinColumn(name = "id_prepare")
-    private Prepare id_prepare;
+    private Prepare prepareId;
 
     @ManyToOne
     @JoinColumn(name = "id_group")
-    private Group id_group;
+    private Group groupId;
 
     public int getId() {
         return id;
@@ -33,23 +33,24 @@ public class Recipe {
     public void setId(int id) {
         this.id = id;
     }
-    public Food getId_food() {
-        return id_food;
+    public Food getFoodId() {
+        return foodId;
     }
-    public void setId_food(Food id_food) {
-        this.id_food = id_food;
+    public void setFoodId(Food foodId) {
+        this.foodId = foodId;
     }
-    public Prepare getId_prepare() {
-        return id_prepare;
+    public Prepare getPrepareId() {
+        return prepareId;
     }
-    public void setId_prepare(Prepare id_prepare) {
-        this.id_prepare = id_prepare;
+    public void setPrepareId(Prepare prepareId) {
+        this.prepareId = prepareId;
     }
-    public Group getId_group() {
-        return id_group;
+    public Group getGroupId() {
+        return groupId;
     }
-    public void setId_group(Group id_group) {
-        this.id_group = id_group;
+    public void setGroupId(Group groupId) {
+        this.groupId = groupId;
     }
+    
     
 }
