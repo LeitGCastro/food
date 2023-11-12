@@ -12,7 +12,7 @@ public class Prepare {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String description;
+    private String name;
 
     public int getId() {
         return id;
@@ -20,10 +20,10 @@ public class Prepare {
     public void setId(int id) {
         this.id = id;
     }
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 }

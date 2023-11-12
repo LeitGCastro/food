@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.food.entities.Group;
@@ -27,6 +28,12 @@ public class GroupController {
     @GetMapping(value = "/{id}")
     public Group findById(@PathVariable Integer id){
         Group result = repository.findById(id).get();
+        return result;
+    }
+    
+    @GetMapping(value = "/name")
+    public List<Group> findByNameContains(@RequestParam("name") String name){
+        List<Group> result = repository.findByNameContains(name);
         return result;
     }
 }

@@ -35,7 +35,6 @@ public class RecipesNutrients {
         this.id = id;
     }
 
-   
     public List<Recipe> getIdRecipe() {
         return idRecipe;
     }
