@@ -29,4 +29,10 @@ public class RecipeController {
         Recipe result = repository.findById(id).get();
         return result;
     }
+
+    // @GetMapping(value = "/prepare")
+    // public List<Recipe> findByPrepareId(@RequestParam("id") String id){
+    //     List<Recipe> result = repository.findByPrepareId(id);
+    //     return result;
+    // }
 }

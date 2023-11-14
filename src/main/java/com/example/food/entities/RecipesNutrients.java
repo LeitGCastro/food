@@ -1,32 +1,33 @@
 package com.example.food.entities;
 
-import java.util.List;
+import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "recipes_nutrients")
-public class RecipesNutrients { 
+public class RecipesNutrients implements Serializable { 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @ManyToMany
-    @JoinColumn(name = "id_recipe")
-    private List<Recipe> idRecipe;
+    @ManyToOne
+    @JoinColumn(name = "id_recipe", referencedColumnName = "id")
+    private Recipe recipe;
 
-    @ManyToMany
-    @JoinColumn(name = "id_nutrient")
-    private List<Nutrient> idNutrient;
+    @ManyToOne
+    @JoinColumn(name = "id_nutrient", referencedColumnName = "id")
+    private Nutrient nutrient;
 
     private float value;
 
+    
     public int getId() {
         return id;
     }
@@ -35,20 +36,20 @@ public class RecipesNutrients {
         this.id = id;
     }
 
-    public List<Recipe> getIdRecipe() {
-        return idRecipe;
+    public Recipe getRecipe() {
+        return recipe;
     }
 
-    public void setIdRecipe(List<Recipe> idRecipe) {
-        this.idRecipe = idRecipe;
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
-    public List<Nutrient> getIdNutrient() {
-        return idNutrient;
+    public Nutrient getNutrient() {
+        return nutrient;
     }
 
-    public void setIdNutrient(List<Nutrient> idNutrient) {
-        this.idNutrient = idNutrient;
+    public void setNutrient(Nutrient nutrient) {
+        this.nutrient = nutrient;
     }
 
     public float getValue() {
